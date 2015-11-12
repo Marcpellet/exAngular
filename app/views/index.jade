@@ -3,3 +3,6 @@ extends layout
 block content
   h1 {{ title }}
   p Welcome to #{title}
+  div(ng-controller='DoughnutCtrl')
+      canvas#doughnut.chart.chart-doughnut(chart-data='data', chart-labels='labels')
+  

@@ -6,9 +6,11 @@ html(ng-app="test_module" lang='en')
     title= title
     block css
       link(rel='stylesheet', href='/css/style.css')
+      link(rel='stylesheet', href='/components/angular-chart.js/dist/angular-chart.css')
     block js
       script(src="/js/angular.js")
       script(src="/js/app/demo-app.js")
+      script(src="/components/angular-chart.js/dist/angular-chart.js")
       if ENV_DEVELOPMENT
         script(src='http://localhost:35729/livereload.js')
   body(ng-controller="test_controller")
