@@ -8,8 +8,8 @@ var config = {
     app: {
       name: 'exangular'
     },
-    port: 3000,
-    db: 'mongodb://localhost/exangular-development'
+    port: process.env.PORT || 3000,
+    db: process.env.MONGOLAB_URI || 'mongodb://localhost/exangular-development'
   },
 
   test: {
@@ -17,8 +17,8 @@ var config = {
     app: {
       name: 'exangular'
     },
-    port: 3000,
-    db: 'mongodb://localhost/exangular-test'
+    port: process.env.PORT || 3000,
+    db: process.env.MONGOLAB_URI || 'mongodb://localhost/exangular-test'
   },
 
   production: {
@@ -26,8 +26,8 @@ var config = {
     app: {
       name: 'exangular'
     },
-    port: 3000,
-    db: 'mongodb://localhost/exangular-production'
+    port: process.env.PORT || 3000,
+    db: process.env.MONGOLAB_URI || 'mongodb://localhost/exangular-production'
   }
 };
 
