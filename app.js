@@ -19,7 +19,22 @@ var app = express();
 
 require('./config/express')(app, config);
 
-app.listen(config.port, function () {
+var server = app.listen(config.port, function () {
   console.log('Express server listening on port ' + config.port);
 });
 
+var io = require("socket.io")(server);
+var data = [0,0,0];
+io.on('connection', function(socket){
+  socket.emit('poll', data );
+
+  socket.on('vote', function(id){
+    data[id]++;
+    io.emit('poll', data);
+  });
+
+  socket.on('reset', function(){
+    data = [0,0,0];
+    io.emit('poll', data);
+  })
+});
